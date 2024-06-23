@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
 import { v2 as cloudinary } from "cloudinary";
 import messageRouter from "./routes/message.route.js";
+import userRouter from "./routes/user.route.js";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/message", messageRouter);
+app.use("/api/user", userRouter);
 
 app.use(
   fileUpload({
